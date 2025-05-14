@@ -1,1 +1,38 @@
 @import "tailwindcss";
+
+:root {
+  --color-blue: oklch(60% 0.2 250);
+  --color-purple: oklch(60% 0.22 300);
+  --color-pink: oklch(70% 0.22 30);
+}
+
+/* Ejemplo de gradiente multicolor para texto */
+.text-gradient {
+  background: linear-gradient(
+    to right, 
+    var(--color-blue), 
+    var(--color-purple), 
+    var(--color-pink)
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Efecto hover arcoíris pastel */
+.text-gradient-hover {
+  background: linear-gradient(
+    90deg,
+    var(--color-blue),
+    var(--color-purple),
+    var(--color-pink)
+  );
+  background-size: 300%;
+  background-position: left;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: background-position 0.5s ease;
+}
+
+.text-gradient-hover:hover {
+  background-position: right;
+}
