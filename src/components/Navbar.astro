@@ -1,18 +1,43 @@
+---
+// src/components/Navbar.astro
+---
 
-
-<nav class="flex justify-between items-center">
-  <ul class="flex gap-4">
-    <li><a href="#about-me">Sobre mí</a></li>
-    <li><a href="#projects">Proyectos</a></li>
-    <li><a href="#contact">Contacto</a></li>
+<nav class="site-nav flex justify-center items-center px-6 py-4 relative z-50">
+  <!-- Menú principal -->
+  <ul class="nav-list hidden md:flex gap-6 text-gradient text-gradient-hover font-semibold px-6 py-2 rounded-xl shadow-md backdrop-blur-md transition-all duration-300">
+    <li><a href="#about-me" class="hover:text-purple-300">Sobre mí</a></li>
+    <li><a href="#projects" class="hover:text-purple-300">Proyectos</a></li>
+    <li><a href="#contact" class="hover:text-purple-300">Contacto</a></li>
   </ul>
-  <div class="container-switch">
-    <label class="switch">
-      <input type="checkbox" id="dark-mode-toggle" />
-      <span class="slider">
+
+  <!-- Botón interruptor modo oscuro -->
+  <div class="dark-mode-toggle flex items-center ml-4">
+    <label class="relative inline-block w-14 h-7 cursor-pointer">
+      <input type="checkbox" id="dark-mode-toggle" class="sr-only">
+      <span class="slider absolute inset-0 bg-gradient-kathy rounded-full flex items-center justify-between px-1 text-xs text-white transition-all shadow-md">
         <i class="fa-solid fa-sun icon-sun"></i>
         <i class="fa-solid fa-moon icon-moon"></i>
+        <span class="dot absolute top-[2px] left-[2px] h-6 w-6 bg-white rounded-full transition-transform"></span>
       </span>
     </label>
   </div>
+
+  <!-- Botón hamburguesa (solo visible en mobile) -->
+  <button class="nav-toggle md:hidden flex flex-col justify-between h-6 w-8" aria-label="Abrir menú" aria-expanded="false">
+    <span class="w-full h-[3px] bg-gradient-kathy p-0.5 rounded m-1"></span>
+    <span class="w-full h-[3px] bg-gradient-kathy p-0.5 rounded m-1"></span>
+    <span class="w-full h-[3px] bg-gradient-kathy p-0.5 rounded m-1"></span>
+  </button>
 </nav>
+
+<style>
+  /* Personalización del switch de modo oscuro */
+.slider .dot {
+  transition: transform 0.3s ease;
+}
+
+#dark-mode-toggle:checked + .slider .dot {
+  transform: translateX(100%);
+}
+
+</style>
