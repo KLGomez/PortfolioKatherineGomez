@@ -1,31 +1,27 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap');
 
+/* -------------------- VARIABLES -------------------- */
 :root {
   --color-blue: oklch(60% 0.2 250);
   --color-purple: oklch(60% 0.22 300);
   --color-pink: oklch(70% 0.22 30);
 }
 
-/* Ejemplo de gradiente multicolor para texto */
+/* -------------------- TIPOGRAFÍA BASE -------------------- */
+body {
+  font-family: "Noto Sans", sans-serif;
+}
+
+/* -------------------- GRADIENTES DE TEXTO -------------------- */
 .text-gradient {
-  background: linear-gradient(
-    to right, 
-    var(--color-blue), 
-    var(--color-purple), 
-    var(--color-pink)
-  );
+  background: linear-gradient(to right, var(--color-blue), var(--color-purple), var(--color-pink));
   -webkit-background-clip: text;
   color: transparent;
 }
 
-/* Efecto hover arcoíris pastel */
 .text-gradient-hover {
-  background: linear-gradient(
-    90deg,
-    var(--color-blue),
-    var(--color-purple),
-    var(--color-pink)
-  );
+  background: linear-gradient(90deg, var(--color-blue), var(--color-purple), var(--color-pink));
   background-size: 300%;
   background-position: left;
   -webkit-background-clip: text;
@@ -35,4 +31,50 @@
 
 .text-gradient-hover:hover {
   background-position: right;
+}
+
+/* -------------------- GRADIENTE DE FONDO (ANIMADO) -------------------- */
+.bg-gradient-kathy {
+  background: linear-gradient(270deg, var(--color-blue), var(--color-purple), var(--color-pink));
+  background-size: 600% 600%;
+  animation: backgroundMove 10s ease infinite;
+}
+
+.bg-gradient-kathy-dark {
+  background: linear-gradient(270deg, #201334, #2e1452, #18022c);
+  background-size: 600% 600%;
+  animation: backgroundMove 10s ease infinite;
+}
+
+/* -------------------- ANIMACIONES -------------------- */
+@keyframes backgroundMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+/* -------------------- UTILS OPCIONALES -------------------- */
+.zoom-in {
+  animation: zoomIn 1s ease forwards;
+}
+
+.delay {
+  animation-delay: 0.6s;
+}
+
+.delay2 {
+  animation-delay: 1.2s;
 }

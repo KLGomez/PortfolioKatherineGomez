@@ -1,29 +1,15 @@
-<section id="projects">
-  <h2 class="text-2xl font-bold mb-4 text-gradient text-gradient-hover">Mis proyectos</h2>
-  <div class="grid md:grid-cols-3 gap-4">
-    <div class="project-card bg-white bg-opacity-10 p-4 rounded">
-      <h3 class="font-semibold text-lg">Título del proyecto</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, doloremque.</p>
-    </div>
-    <div class="project-card bg-white bg-opacity-10 p-4 rounded">
-      <h3 class="font-semibold text-lg">Título del proyecto</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, suscipit!</p>
-    </div>
-    <div class="project-card bg-white bg-opacity-10 p-4 rounded">
-      <h3 class="font-semibold text-lg">Título del proyecto</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, perferendis.</p>
-    </div>
-        <div class="project-card bg-white bg-opacity-10 p-4 rounded">
-      <h3 class="font-semibold text-lg">Título del proyecto</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, doloremque.</p>
-    </div>
-    <div class="project-card bg-white bg-opacity-10 p-4 rounded">
-      <h3 class="font-semibold text-lg">Título del proyecto</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, suscipit!</p>
-    </div>
-    <div class="project-card bg-white bg-opacity-10 p-4 rounded">
-      <h3 class="font-semibold text-lg">Título del proyecto</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, perferendis.</p>
-    </div>
+---
+import ProjectCard from "../components/ProjectCard.astro";
+---
+
+<section id="projects" class="px-4 py-8">
+  <h2 class="text-2xl font-bold mb-6 text-gradient text-gradient-hover text-center">Mis proyectos</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    <ProjectCard title="GOGYM" description="Plataforma de gestión de gimnasio con React, Node.js y MongoDB." />
+    <ProjectCard title="Barrioneta" description="Red social para vecinos construida con HTML, CSS y JavaScript." />
+    <ProjectCard title="QA Dashboard" description="Panel de control para visualización de métricas de testing automatizado." />
+    <ProjectCard title="Portfolio" description="Mi portfolio personal hecho con Astro, Tailwind y amor por el diseño." />
+    <ProjectCard title="ToDo App" description="Gestor de tareas con React y MongoDB." />
+    <ProjectCard title="API REST" description="Servicio backend con Node.js, Express y base de datos MySQL." />
   </div>
 </section>
