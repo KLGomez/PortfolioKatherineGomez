@@ -2,16 +2,27 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap');
 
-/* -------------------- VARIABLES -------------------- */
+/* -------------------- VARIABLES OKLCH -------------------- */
 :root {
+  /* Colores base */
   --color-blue: oklch(60% 0.2 250);
   --color-purple: oklch(60% 0.22 300);
   --color-pink: oklch(70% 0.22 30);
+
+  /* Gradientes oscuros */
+  --color-dark-1: oklch(30% 0.05 270);
+  --color-dark-2: oklch(35% 0.08 300);
+  --color-dark-3: oklch(25% 0.07 280);
+
+  /* Texto oscuro */
+/*   --color-text: oklch(95% 0.01 270);
+  --color-muted: oklch(80% 0.02 270); */
 }
 
-/* -------------------- TIPOGRAFÍA BASE -------------------- */
+/* -------------------- TIPOGRAFÍA -------------------- */
 body {
   font-family: "Noto Sans", sans-serif;
+  color: var(--color-text);
 }
 
 /* -------------------- GRADIENTES DE TEXTO -------------------- */
@@ -34,7 +45,7 @@ body {
   background-position: right;
 }
 
-/* -------------------- GRADIENTE DE FONDO (ANIMADO) -------------------- */
+/* -------------------- GRADIENTES DE FONDO (animados) -------------------- */
 .bg-gradient-kathy {
   background: linear-gradient(270deg, var(--color-blue), var(--color-purple), var(--color-pink));
   background-size: 600% 600%;
@@ -42,7 +53,7 @@ body {
 }
 
 .bg-gradient-kathy-dark {
-  background: linear-gradient(270deg, #201334, #2e1452, #18022c);
+  background: linear-gradient(270deg, var(--color-dark-1), var(--color-dark-2), var(--color-dark-3));
   background-size: 600% 600%;
   animation: backgroundMove 10s ease infinite;
 }
@@ -67,15 +78,14 @@ body {
   }
 }
 
-/* -------------------- UTILS OPCIONALES -------------------- */
+/* -------------------- UTILIDADES -------------------- */
 .zoom-in {
   animation: zoomIn 1s ease forwards;
 }
-
 .delay {
   animation-delay: 0.6s;
 }
-
 .delay2 {
   animation-delay: 1.2s;
 }
+/* ----- */
