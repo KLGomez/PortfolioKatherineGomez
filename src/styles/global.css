@@ -89,3 +89,66 @@ body {
   animation-delay: 1.2s;
 }
 /* ----- */
+
+  body {
+    background-image: url('../assets/background.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  /* ----------------botones----------------- */
+.btn-kathy-outline {
+  @apply inline-flex items-center justify-center px-4 py-2 rounded-full font-semibold text-sm sm:text-base text-center transition-all duration-300;
+
+  background-color: transparent;
+  border: 2px solid transparent;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Borde animado y fondo al pasar el mouse */
+.btn-kathy-outline::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(270deg, var(--color-blue), var(--color-purple), var(--color-pink));
+  background-size: 600% 600%;
+  animation: spinBorder 6s linear infinite;
+  z-index: -1;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+}
+
+/* Gradiente en texto */
+.btn-kathy-outline-text {
+  background: linear-gradient(to right, var(--color-blue), var(--color-purple), var(--color-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Hover efecto suave */
+.btn-kathy-outline:hover {
+  transform: scale(1.05);
+}
+
+/* Borde animado */
+@keyframes spinBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+

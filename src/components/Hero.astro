@@ -1,13 +1,76 @@
-<section class="flex flex-col md:flex-row items-center justify-between py-8">
-  <div class="intro-text space-y-4">
-    <h1 class="text-4xl font-bold text-gradient text-gradient-hover">Katherine Gomez</h1>
-    <h2 class="text-2xl font-semibold text-gradient text-gradient-hover">Desarrolladora Web Full Stack & Tester QA</h2>
-    <p>Codifico, testeo y aprendo cada día</p>
-    <div class="flex gap-4">
-      <a href="https://www.linkedin.com/in/katherinelujangomez/" target="_blank" class="glow-border button-content">Disponible para trabajar</a>
-      <a href="/public/CV_Katherine_Gomez.pdf" download class="glow-border button-content">
-        <i class="fa-solid fa-file"></i> Descargar CV
-      </a>
+<section
+  class="hero flex flex-col-reverse md:flex-row items-center md:items-center gap-5 md:gap-10 py-16 max-w-6xl mx-auto px-6"
+>
+  <!-- Texto  intro-->
+  <div class="text-center md:text-center md:w-1/2 space-y-4 animate-fade-in">
+    <h1
+      class="text-4xl sm:text-5xl font-bold text-gradient text-gradient-hover leading-tight"
+    >
+      Katherine Gomez
+    </h1>
+    <h2
+      class="text-xl sm:text-2xl font-semibold text-gradient text-gradient-hover"
+    >
+      Full Stack Developer & QA Tester
+    </h2>
+    <p class="text-gray-500 text-base sm:text-lg">
+      Codifico, testeo y aprendo cada día.
+    </p>
+
+    <!-- Botones -->
+    <div
+      class="flex flex-col sm:flex-row gap-4 mt-6 justify-center items-center"
+    >
+      <span>
+        <a
+          href="https://www.linkedin.com/in/katherinelujangomez/"
+          target="_blank"
+          class="text-sm sm:text-base btn-kathy-outline btn-kathy-outline-text"
+        >
+          Disponible para trabajar
+        </a>
+      </span>
+
+      <span>
+        <a
+          href="/public/CV_Katherine_Gomez.pdf"
+          download
+          class="text-sm sm:text-base btn-kathy-outline btn-kathy-outline-text"
+        >
+          <i class="fa-solid fa-file mr-2"
+          ></i> Descargar CV
+        </a>
+      </span>
     </div>
   </div>
+
+  <!-- Imagen -->
+  <div class="md:w-1/2 flex justify-center md:justify-center">
+    <img
+      src="/public/img/hero-image.webp"
+      alt="Foto de perfil"
+      class="w-48 sm:w-64 h-auto object-cover rounded-full shadow-lg animate-fade-in delay-200"
+    />
+  </div>
 </section>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out both;
+  }
+
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+</style>
